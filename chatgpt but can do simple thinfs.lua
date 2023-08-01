@@ -807,7 +807,7 @@ _G.ChokeRemoteRespond = false
 
 --nornal settings
 local miniChar = 2 --Example: "hi" = 2 Character "hell" = 4 character
-local MaxChar = 100 
+local MaxChar = 200
 local maxstud = 6 -- how far ai will respond to the player
 
 --advance settings
