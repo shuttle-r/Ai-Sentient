@@ -833,7 +833,7 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
     if player then
         if message == "/--" then
          -- // SETTINGS \\ 
-local SECRET_KEY = OpenaiKeys.Text --"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";https://beta.openai.com/account/api-keys
+local SECRET_KEY = OpenaiKeys.Text --https://beta.openai.com/account/api-keys
 local CLOSE_RANGE_ONLY = false;
 
 _G.MESSAGE_SETTINGS = {
