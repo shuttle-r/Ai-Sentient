@@ -422,24 +422,30 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
         if targetPlayerName then
             local targetPlayer = players:FindFirstChild(targetPlayerName)
             if targetPlayer and targetPlayer.Character and targetPlayer.Character:FindFirstChild("HumanoidRootPart") then
-            local A=Instance.new'Animation'
-            if game:GetService("Players").LocalPlayer.Character.Humanoid.RigType == Enum.HumanoidRigType.R6 then
-            A.AnimationId='rbxassetid://148840371'
-            elseif game:GetService("Players").LocalPlayer.Character.Humanoid.RigType == Enum.HumanoidRigType.R15 then
-            A.AnimationId='rbxassetid://5918726674'
-            end
-            local P=game:GetService'Players'.LocalPlayer
-            local C=P.Character or P.CharacterAdded:Wait()
-            local H=C:WaitForChild'Humanoid':LoadAnimation(A)
-            H:Play()
-            H:AdjustSpeed(2.5)
-            _G.BangFunct = game:GetService'RunService'.Heartbeat:Connect(function()
-               C:WaitForChild'HumanoidRootPart'.CFrame=CFrame.new(game:GetService'Players':FindFirstChild(targetPlayer).Character:WaitForChild'HumanoidRootPart'.Position)
-            end)
+                local A = Instance.new("Animation")
+                if game:GetService("Players").LocalPlayer.Character.Humanoid.RigType == Enum.HumanoidRigType.R6 then
+                    A.AnimationId = 'rbxassetid://148840371'
+                elseif game:GetService("Players").LocalPlayer.Character.Humanoid.RigType == Enum.HumanoidRigType.R15 then
+                    A.AnimationId = 'rbxassetid://5918726674'
+                end
+                local P = game:GetService("Players").LocalPlayer
+                local C = P.Character or P.CharacterAdded:Wait()
+                local H = C:WaitForChild("Humanoid"):LoadAnimation(A)
+                H:Play()
+                H:AdjustSpeed(2.5)
+                _G.BangFunct = game:GetService("RunService").Heartbeat:Connect(function()
+                    local targetCharacter = targetPlayer.Character
+                    if targetCharacter and targetCharacter:FindFirstChild("HumanoidRootPart") then
+                        C:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(targetCharacter:FindFirstChild("HumanoidRootPart").Position)
+                    else
+                        _G.BangFunct:Disconnect()  -- Disconnect the heartbeat event if targetPlayer or targetCharacter is nil
+                    end
+                end)
             end
         end
     end
 end)
+
 
 
 
