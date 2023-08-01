@@ -869,8 +869,12 @@ local Debounce = false;
 local AiSysRole = AiSysRoleTextBox.Text
 local RequestFunctiom = syn and syn.request or request;
 local conversationHistory = {
-    { role = "user", content = "how you Cupcake" },
-    { role = "assistant", content = "Provide me a username" },
+    { role = "user", content = "You have a character?" },
+    { role = "assistant", content = "Yes i have a character" },
+    { role = "user", content = "To walk say walkIntoPlayer(player name)" },
+    { role = "assistant", content = "Alright" },
+    { role = "user", content = "to cupcake say Cupcake(player name)" },
+    { role = "assistant", content = "Alright" },
 }
 
 
