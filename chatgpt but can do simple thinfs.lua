@@ -932,46 +932,6 @@ end
 
  
 OnMessageDoneFiltering.OnClientEvent:Connect(function(Table)
--- Create ScreenGui
-local gui = Instance.new("ScreenGui")
-gui.Parent = game.Players.LocalPlayer.PlayerGui
-
--- Create Frame
-local frame = Instance.new("Frame")
-frame.Size = UDim2.new(0, 300, 0, 200)
-frame.Position = UDim2.new(0.5, -150, 0.5, -100)
-frame.BackgroundColor3 = Color3.fromRGB(50, 50, 50) -- Gray color
-frame.BorderColor3 = Color3.fromRGB(0, 0, 0) -- Black color
-frame.BorderSizePixel = 2
-frame.AnchorPoint = Vector2.new(0.5, 0.5)
-frame.Draggable = true -- Enable dragging
-frame.Parent = gui
-
--- Create TextLabel
-local textLabel = Instance.new("TextLabel")
-textLabel.Size = UDim2.new(1, -10, 1, -10)
-textLabel.Position = UDim2.new(0, 5, 0, 5)
-textLabel.BackgroundTransparency = 1
-textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-textLabel.Font = Enum.Font.SourceSans
-textLabel.TextSize = 16
-textLabel.TextWrapped = true
-textLabel.Parent = frame
-
--- Function to convert conversationHistory table to a formatted string
-local function tableToString(tbl)
-    return table.concat(tbl, "\n")
-end
-
--- Update the textLabel with conversationHistory as a string
-textLabel.Text = tableToString(conversationHistory)
-
--- Function to update conversationHistory and refresh the textLabel
-local function updateConversationHistory(newMessage)
-    table.insert(conversationHistory, newMessage)
-    textLabel.Text = tableToString(conversationHistory)
-end
-
 
 miniChar = miniChar
 MaxChar = MaxChar
