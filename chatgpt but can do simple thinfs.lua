@@ -958,7 +958,7 @@ AiSysRoleTextBox.Text = "\nYou are a normal player playing Roblox. You have char
     end
 table.insert(conversationHistory, {
     role = "user",
-    content = NameOfThePlayer.. " Said: ".. Message,
+    content = Message,
 })
     if Debounce or #Message < _G.MESSAGE_SETTINGS["MINIMUM_CHARACTERS"] or #Message > _G.MESSAGE_SETTINGS["MAXIMUM_CHARACTERS"] then
         return
