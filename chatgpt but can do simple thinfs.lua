@@ -994,10 +994,6 @@ if response then
 local Response = " " .. string.gsub(HttpService:JSONDecode(response.Body).choices[1].message.content, "\n", " ")
 local CheckChatGptStatus = string.gsub(HttpService:JSONDecode(response.Body).choices[1].finish_reason, "\n", " ")
 table.insert(conversationHistory, {
-    role = "user",
-    content = Message,
-})
-table.insert(conversationHistory, {
     role = "assistant",
     content = Response,
 })
