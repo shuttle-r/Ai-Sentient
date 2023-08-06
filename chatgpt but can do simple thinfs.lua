@@ -910,13 +910,13 @@ local function MakeRequest(Prompt)
     if not success then
       _G.OpenAI = false
       notify("Chatgpt failed type /-- in chat to execute it again")
-        return
+        return nil
     end
 
     if response.Status ~= nil then
       _G.OpenAI = false
         notify("error code: ".. response.Status)
-        return
+        return nil
     end
     if response.Body:find("error") then
       _G.OpenAI = false
