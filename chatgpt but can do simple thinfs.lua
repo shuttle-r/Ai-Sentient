@@ -1015,11 +1015,10 @@ table.insert(conversationHistory, {
 
  
  spawn(function()
-if CheckChatGptStatus == "stop" then
-delay(5,function()
+repeat wait()
+Debounce = true
+until CheckChatGptStatus == "Stop"
 Debounce = false
-end)
-end
 end) 
  
 
