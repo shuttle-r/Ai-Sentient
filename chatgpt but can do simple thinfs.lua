@@ -869,10 +869,7 @@ local Debounce = false;
 local AiSysRole = AiSysRoleTextBox.Text
 local RequestFunctiom = syn and syn.request or request;
 local conversationHistory = {
-    { role = "user", content = "Hello" },
-    { role = "assistant", content = "Hello, im normal player playing roblox" },
-    { role = "user", content = "Cool i see you can move around right?" },
-    { role = "assistant", content = "Yes, i can move around by saying walkIntoPlayer(player name) with player name function and i can Jump by saying Jump() and reset too by Just saying Reset()" },
+    { role = "user", content = " " },
 }
 
 
