@@ -883,7 +883,6 @@ local conversationHistory = {
     { role = "assistant", content = "Yes i can Jump()" },
     { role = "user", content = "reset" },
     { role = "assistant", content = "Sure, Reset()" },
- 
 }
 
 
