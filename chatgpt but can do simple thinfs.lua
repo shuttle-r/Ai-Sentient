@@ -955,7 +955,7 @@ AiSysRole = AiSysRoleTextBox.Text
 local Message, NameOfThePlayer = Table.Message, Players:FindFirstChild(Table.FromSpeaker);
 local Character = NameOfThePlayer and NameOfThePlayer.Character;
 local position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position-- Replace with the desired position
-local maxPlayers = 9-- Replace with the desired maximum number of player 
+local maxPlayers = 20-- Replace with the desired maximum number of player 
 local NearPlayerTable = {}
 NearPlayerTable = getNearestPlayerNames(position, maxPlayers) 
 local function tableToCommaString(tbl)
