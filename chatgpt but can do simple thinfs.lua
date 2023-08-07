@@ -881,6 +881,8 @@ local conversationHistory = {
     { role = "assistant", content = "Sure, Jump()" },
     { role = "user", content = "Can you jump?" },
     { role = "assistant", content = "Yes i can Jump()" },
+    { role = "user", content = "reset" },
+    { role = "assistant", content = "Sure, Reset()" },
  
 }
 
