@@ -890,7 +890,7 @@ _G.CriticalPromptImport = "None"
 local function MakeRequest(Prompt)
 -- warn("Successful to send: " .. Prompt)
     local messages = {
-        { role = "system", content = AiSysRole.."\n \n" }
+        { role = "system", content = AiSysRole.."\n\n".._G.CriticalPromptImport }
     }
     for i, message in ipairs(conversationHistory) do
         table.insert(messages, message)
