@@ -1044,7 +1044,7 @@ else
             SayMessageRequest:FireServer(string.sub(Response, 129), "All")
             task.wait(2)
 --             Debounce = false
-        end)
+     --   end)
         else
 			SayMessageRequest:FireServer("--", "All");
 			task.wait(2);
