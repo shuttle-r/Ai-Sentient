@@ -1001,8 +1001,12 @@ if not success then
 
 
 if response then
+local CheckChatGptStatus = string.gsub(HttpService:JSONDecode(response.Body).choices[1].finish_reason, "\n", " ") 
+repeat wait()
+Debounce = true
+until CheckChatGptStatus == "Stop"
+Debounce = false
 local Response = " " .. string.gsub(HttpService:JSONDecode(response.Body).choices[1].message.content, "\n", " ")
-local CheckChatGptStatus = string.gsub(HttpService:JSONDecode(response.Body).choices[1].finish_reason, "\n", " ")
 table.insert(conversationHistory, {
     role = "user",
     content = Message,
@@ -1015,10 +1019,7 @@ table.insert(conversationHistory, {
 
  
 
-repeat wait()
-Debounce = true
-until CheckChatGptStatus == "Stop"
-Debounce = false
+
  
 
   
