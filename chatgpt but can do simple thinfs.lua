@@ -1025,26 +1025,26 @@ table.insert(conversationHistory, {
   
 if #Response > 1 and _G.ChokeRemoteRespond == true then
 ChatGptStored.Text = Response
--- delay(5,function()
--- task.wait(5)
--- Debounce = false
--- end)
+delay(5,function()
+task.wait(5)
+--Debounce = false
+end)
 end
 
 if #Response < 128 and _G.ChokeRemoteRespond == false then
     SayMessageRequest:FireServer(Response, "All")
-    -- delay(5,function()
+    delay(5,function()
      task.wait(3)
 --     Debounce = false
---     end)
+end)
 else
     if #Response - 128 < 128 and _G.ChokeRemoteRespond == false then
         SayMessageRequest:FireServer(string.sub(Response, 1, 128), "All")
-        -- delay(2, function()
+        delay(2, function()
             SayMessageRequest:FireServer(string.sub(Response, 129), "All")
             task.wait(2)
 --             Debounce = false
-     --   end)
+      end)
         else
 			SayMessageRequest:FireServer("--", "All");
 			task.wait(2);
