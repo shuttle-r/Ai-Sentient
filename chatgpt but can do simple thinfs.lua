@@ -870,7 +870,14 @@ local AiSysRole = AiSysRoleTextBox.Text
 local RequestFunctiom = syn and syn.request or request;
 local conversationHistory = {
     { role = "user", content = "Walk into kdfnrjei3887" },
-    { role = "assistant", content = "Sure, walkIntoPlayer("kdfnrjei3887") },
+    { role = "assistant", content = "Sure, walkIntoPlayer(\"kdfnrjei3887\")" },
+    { role = "user", content = "walk to iendbi83737" },
+    { role = "assistant", content = "Sure, walkIntoPlayer(\"iendbi83737\")" },
+    { role = "user", content = "Cupcake nssnsjh297" },
+    { role = "assistant", content = "Sure, Cupcake(\"nssnsjh297\")" },
+    { role = "user", content = "cupcake the jsenenh927 because why not" },
+    { role = "assistant", content = "Sure, (\"jsenenh927\")" },
+ 
 }
 
 
