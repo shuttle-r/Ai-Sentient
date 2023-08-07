@@ -869,7 +869,7 @@ local Debounce = false;
 local AiSysRole = AiSysRoleTextBox.Text
 local RequestFunctiom = syn and syn.request or request;
 local conversationHistory = {
-    { role = "user", content = "Walk into kdfnrjei3887" },
+    { role = "user", content = "Walk into kdfnrjei3887" },-- pre-shotting the ai so it's smarter to use function
     { role = "assistant", content = "Sure, walkIntoPlayer(\"kdfnrjei3887\")" },
     { role = "user", content = "walk to iendbi83737" },
     { role = "assistant", content = "Sure, walkIntoPlayer(\"iendbi83737\")" },
