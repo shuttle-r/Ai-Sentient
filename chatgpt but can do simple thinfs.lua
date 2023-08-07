@@ -875,7 +875,7 @@ local conversationHistory = {
 
 
 local function MakeRequest(Prompt)
-   -- warn("Successful to send: " .. Prompt)
+  warn("Successful to send: " .. Prompt)
     local messages = {
         { role = "system", content = AiSysRole }
     }
