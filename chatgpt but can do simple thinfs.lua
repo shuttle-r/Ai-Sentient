@@ -906,7 +906,7 @@ local function MakeRequest(Prompt)
                 ["Authorization"] = "Bearer " .. SECRET_KEY
             },
             Body = HttpService:JSONEncode({
-                model = "gpt-3.5-turbo-16k",
+                model = "gpt-3.5-turbo",
                 messages = messages,
                 temperature = temper,
                 max_tokens = tokens,
