@@ -6,8 +6,18 @@
 --]]
 
 
-
-
+--[[
+  Ai features:
+  remembered previous conversation(unless the script errored or you leave the game)
+  Can bang player 
+  follow player
+  move around automatically(not finish)
+  can  reset
+  set what ai should act(for Example you can make your ai act like a tsundere)
+  can equip and use the item in inventory(not finish)
+  can add friend someone(not finish)
+  can do jump
+--]]
 local success, err = pcall(function()
   local function notify(txt,Errored)
  spawn(function()
