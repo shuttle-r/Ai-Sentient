@@ -1069,7 +1069,6 @@ end
  
 OnMessageDoneFiltering.OnClientEvent:Connect(function(Table)
 printInventory(itemCounts)
-print(_G.inventoryText)
 miniChar = miniChar
 MaxChar = MaxChar
 maxstud = maxstud
