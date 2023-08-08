@@ -876,7 +876,7 @@ local conversationHistory = {
     { role = "user", content = "Cupcake nssnsjh297" },
     { role = "assistant", content = "Sure, Cupcake(\"nssnsjh297\")" },
     { role = "user", content = "cupcake the jsenenh927 because why not" },
-    { role = "assistant", content = "Sure, (\"jsenenh927\")" },
+    { role = "assistant", content = "Sure, Cupcake(\"jsenenh927\")" },
     { role = "user", content = "jump" },
     { role = "assistant", content = "Sure, Jump()" },
     { role = "user", content = "Can you jump?" },
