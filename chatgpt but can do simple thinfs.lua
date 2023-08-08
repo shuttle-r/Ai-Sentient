@@ -857,6 +857,41 @@ OpenaiKeys.TextScaled = true
 
 _G.ChokeRemoteRespond = false
 
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+local function countItems(backpack)
+    local itemCounts = {}
+    
+    for _, item in pairs(backpack:GetChildren()) do
+        local itemName = item.Name
+        itemCounts[itemName] = (itemCounts[itemName] or 0) + 1
+    end
+    
+    return itemCounts
+end
+
+local function printInventory(itemCounts)
+    local inventoryText = "Inventory: "
+    
+    for itemName, itemCount in pairs(itemCounts) do
+        local displayText = itemCount > 1 and (itemName .. " x" .. itemCount) or itemName
+        inventoryText = inventoryText .. displayText .. ", "
+    end
+    
+    -- Remove the trailing comma and space
+    inventoryText = inventoryText:sub(1, -3)
+    
+    print(inventoryText)
+end
+
+local backpack = LocalPlayer.Backpack
+local itemCounts = countItems(backpack)
+printInventory(itemCounts)
+
+
+
+
 --nornal settings
 local miniChar = 2 --Example: "hi" = 2 Character "hell" = 4 character
 local MaxChar = 200
