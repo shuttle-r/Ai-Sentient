@@ -1008,6 +1008,7 @@ local conversationHistory = {
     { role = "assistant", content = "Sure, Equip(\"jshssb27\")" },
     { role = "user", content = "equip jssbsb" },
     { role = "assistant", content = "Sure, Equip(\"jssbsb\")" },
+    { role = "user", content = " " },
 }
 
 
