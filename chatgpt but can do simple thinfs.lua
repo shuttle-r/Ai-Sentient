@@ -1128,7 +1128,7 @@ if not success then
 
 if response then
 local CheckChatGptStatus = string.gsub(HttpService:JSONDecode(response.Body).choices[1].finish_reason, "\n", " ") 
-repeat wait(2)
+repeat wait()
 Debounce = true
 until CheckChatGptStatus == "stop" or CheckChatGptStatus == "length"
 Debounce = false
