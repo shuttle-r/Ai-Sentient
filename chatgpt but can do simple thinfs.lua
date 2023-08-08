@@ -881,12 +881,12 @@ local function printInventory(itemCounts)
     
     inventoryText = inventoryText:sub(1, -3)
     
-    print(inventoryText)
+        
 end
 
 local backpack = LocalPlayer.Backpack
 local itemCounts = countItems(backpack)
-printInventory(itemCounts)
+
 
 
 
@@ -1029,6 +1029,7 @@ end
 
  
 OnMessageDoneFiltering.OnClientEvent:Connect(function(Table)
+printInventory(itemCounts)
 miniChar = miniChar
 MaxChar = MaxChar
 maxstud = maxstud
