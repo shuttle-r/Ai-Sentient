@@ -879,7 +879,6 @@ local function printInventory(itemCounts)
         inventoryText = inventoryText .. displayText .. ", "
     end
     
-    -- Remove the trailing comma and space
     inventoryText = inventoryText:sub(1, -3)
     
     print(inventoryText)
