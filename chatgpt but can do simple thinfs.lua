@@ -1004,6 +1004,8 @@ local conversationHistory = {
     { role = "assistant", content = "Sure, Follow(\"hdbdjha9276\")" },
     { role = "user", content = "stop following hdbdjha9276" },
     { role = "assistant", content = "Sure, FollowStop(\"hdbdjha9276\")" },
+    { role = "user", content = "Can you equip the jshssb27" },
+    { role = "assistant", content = "Sure, Equip(\"jshssb27\")" },
     
 }
 
