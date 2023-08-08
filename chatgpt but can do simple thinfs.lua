@@ -942,7 +942,6 @@ end
 
  
 OnMessageDoneFiltering.OnClientEvent:Connect(function(Table)
-table.foreach(conversationHistory, print)
 miniChar = miniChar
 MaxChar = MaxChar
 maxstud = maxstud
