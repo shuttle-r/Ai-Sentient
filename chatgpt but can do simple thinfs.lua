@@ -1004,10 +1004,10 @@ local conversationHistory = {
     { role = "assistant", content = "Sure, Follow(\"hdbdjha9276\")" },
     { role = "user", content = "stop following" },
     { role = "assistant", content = "Sure, FollowStop()" },
-    { role = "user", content = "Can you equip the jshssb27" },
-    { role = "assistant", content = "Sure, Equip(\"jshssb27\")" },
-    { role = "user", content = "equip jssbsb" },
-    { role = "assistant", content = "Sure, Equip(\"jssbsb\")" },
+    { role = "user", content = "Can you equip the wood" },
+    { role = "assistant", content = "Sure, Equip(\"wood\")" },
+    { role = "user", content = "equip bucket" },
+    { role = "assistant", content = "Sure, Equip(\"bucket\")" },
     { role = "user", content = " " },
 }
 
