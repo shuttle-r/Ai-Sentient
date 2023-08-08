@@ -931,7 +931,7 @@ local conversationHistory = {
     { role = "assistant", content = "Sure, Reset()" },
     { role = "user", content = "follow jensdni8276" },
     { role = "assistant", content = "Sure, Follow(\"jensdni8276\")" },
-    { role = "user", content = "follow hdbdjha9276" },
+    { role = "user", content = "follow hdbdjha9276 because why not" },
     { role = "assistant", content = "Sure, Follow(\"hdbdjha9276\")" },
     
 }
