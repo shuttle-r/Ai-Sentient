@@ -394,6 +394,29 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
     local player = players:FindFirstChild(message.FromSpeaker)
     local msg = message.Message or ""
     if player then
+        local targetPlayerName = msg:match('Equip%("%s*(.-)"%)')
+        if targetPlayerName then
+            local targetPlayer = players:FindFirstChild(targetPlayerName)
+            if targetPlayer and targetPlayer.Character and targetPlayer.Character:FindFirstChild("HumanoidRootPart") then
+            local selectedOption = targetPlayer-- Change this to the desired item name
+            equipItem(selectedOption) 
+            end
+        end
+    end
+end)
+
+
+
+
+
+
+local players = game:GetService("Players")
+local chatEvents = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents")
+local messageDoneFiltering = chatEvents:WaitForChild("OnMessageDoneFiltering")
+messageDoneFiltering.OnClientEvent:Connect(function(message)
+    local player = players:FindFirstChild(message.FromSpeaker)
+    local msg = message.Message or ""
+    if player then
         local targetPlayerName = msg:match('Jump()')
         if targetPlayerName then
          players.LocalPlayer.Character.Humanoid.Jump = true
