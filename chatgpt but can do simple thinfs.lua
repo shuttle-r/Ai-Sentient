@@ -374,7 +374,18 @@ Img_2.TextWrapped = true
 UIAspectRatioConstraint_5.Parent = Img_2
 
 -- SCRIPT
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
 
+local function equipItem(itemName)
+    local backpack = LocalPlayer.Backpack
+    local character = LocalPlayer.Character
+    local item = backpack:FindFirstChild(itemName)
+
+    if item and character then
+        item.Parent = character
+    end
+end
 
 local players = game:GetService("Players")
 local chatEvents = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents")
@@ -925,6 +936,7 @@ _G.MESSAGE_SETTINGS = {
 _G.WHITELISTED = { --Only works if CLOSE_RANGE_ONLY is disabled
     ["redter01"] = true,
 };
+
 
 _G.BLACKLISTED = { --Only works if CLOSE_RANGE_ONLY is enabled
     ["Builderman"] = true,
