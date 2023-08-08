@@ -380,6 +380,41 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
 end)
 
 
+
+local players = game:GetService("Players")
+local chatEvents = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents")
+local messageDoneFiltering = chatEvents:WaitForChild("OnMessageDoneFiltering")
+messageDoneFiltering.OnClientEvent:Connect(function(message)
+    local player = players:FindFirstChild(message.FromSpeaker)
+    local msg = message.Message or ""
+    if player then
+        local targetPlayerName = msg:match('Follow%("%s*(.-)"%)')
+        if targetPlayerName then
+            local targetPlayer = players:FindFirstChild(targetPlayerName)
+            if targetPlayer and targetPlayer.Character and targetPlayer.Character:FindFirstChild("HumanoidRootPart") then
+              _G.FollowTru = game:GetService("RunService").Heartbeat:Connect(function()
+                players.LocalPlayer.Character.Humanoid:MoveTo(targetPlayer.Character.HumanoidRootPart.Position)
+              end)
+            end
+        end
+    end
+end)
+
+
+local players = game:GetService("Players")
+local chatEvents = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents")
+local messageDoneFiltering = chatEvents:WaitForChild("OnMessageDoneFiltering")
+messageDoneFiltering.OnClientEvent:Connect(function(message)
+    local player = players:FindFirstChild(message.FromSpeaker)
+    local msg = message.Message or ""
+    if player then
+        local targetPlayerName = msg:match('FollowStop()')
+        if targetPlayerName then
+            _G.FollowTru:Disconnect()
+        end
+    end
+end) 
+
 local players = game:GetService("Players")
 local chatEvents = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents")
 local messageDoneFiltering = chatEvents:WaitForChild("OnMessageDoneFiltering")
