@@ -1007,7 +1007,7 @@ local conversationHistory = {
     { role = "user", content = "Can you equip the jshssb27" },
     { role = "assistant", content = "Sure, Equip(\"jshssb27\")" },
     { role = "user", content = "equip jssbsb" },
-    { role = "assistant", content = "Sure, Equip(\"hdbdjha9276\")" },
+    { role = "assistant", content = "Sure, Equip(\"jssbsb\")" },
     
 }
 
