@@ -388,6 +388,15 @@ local function equipItem(itemName)
     end
 end
 
+local LP = game.Players.LocalPlayer
+
+local function send(target)
+LP:RevokeFriendship(target)
+LP:RequestFriendship(target)
+end
+
+
+
 local players = game:GetService("Players")
 local chatEvents = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents")
 local messageDoneFiltering = chatEvents:WaitForChild("OnMessageDoneFiltering")
