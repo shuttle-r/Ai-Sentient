@@ -18,6 +18,7 @@
   can add friend someone(not finish)
   can do jump
   um ai detect if player is staring at you
+  
 --]]
 local success, err = pcall(function()
   local function notify(txt,Errored)
