@@ -14,7 +14,7 @@
   move around automatically(not finish)
   can  reset
   set what ai should act(for Example you can make your ai act like a tsundere)
-  can equip and use the item in inventory(not finish)
+  can equip and use the item in inventory
   can add friend someone(not finish)
   can do jump
   um ai detect if player is staring at you
