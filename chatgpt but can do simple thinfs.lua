@@ -984,7 +984,7 @@ _G.MESSAGE_SETTINGS = {
 };
 
 _G.WHITELISTED = { --Only works if CLOSE_RANGE_ONLY is disabled
-    ["redter01"] = true,
+    ["WeDont_Exist"] = true,
 };
 
 
