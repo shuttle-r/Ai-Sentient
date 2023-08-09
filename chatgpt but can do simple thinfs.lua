@@ -426,8 +426,7 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
         if targetPlayerName then
             local targetPlayer = players:FindFirstChild(targetPlayerName)
             if targetPlayer and targetPlayer.Character and targetPlayer.Character:FindFirstChild("HumanoidRootPart") then
-            local selectedOption = targetPlayer-- Change this to the desired item name
-            equipItem(selectedOption) 
+            send(targetPlayer)
             end
         end
     end
