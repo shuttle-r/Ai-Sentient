@@ -406,10 +406,8 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
         local targetPlayerName = msg:match('Equip%("%s*(.-)"%)')
         if targetPlayerName then
             local targetPlayer = players.LocalPlayer.Backpack:FindFirstChild(targetPlayerName)
-            if targetPlayer and targetPlayer.Character and targetPlayer.Character:FindFirstChild("HumanoidRootPart") then
             local selectedOption = targetPlayer-- Change this to the desired item name
             equipItem(selectedOption) 
-            end
         end
     end
 end)
