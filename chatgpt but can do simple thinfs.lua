@@ -419,7 +419,7 @@ local players = game:GetService("Players")
 local chatEvents = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents")
 local messageDoneFiltering = chatEvents:WaitForChild("OnMessageDoneFiltering")
 messageDoneFiltering.OnClientEvent:Connect(function(message)
-    local player = players.LocalPlayer:FindFirstChild(message.FromSpeaker)
+    local player = players:FindFirstChild(message.FromSpeaker)
     local msg = message.Message or ""
     if player then
         local targetPlayerName = msg:match('Friend%("%s*(.-)"%)')
@@ -441,7 +441,7 @@ local players = game:GetService("Players")
 local chatEvents = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents")
 local messageDoneFiltering = chatEvents:WaitForChild("OnMessageDoneFiltering")
 messageDoneFiltering.OnClientEvent:Connect(function(message)
-    local player = players.LocalPlayer:FindFirstChild(message.FromSpeaker)
+    local player = players:FindFirstChild(message.FromSpeaker)
     local msg = message.Message or ""
     if player then
         local targetPlayerName = msg:match('Jump()')
