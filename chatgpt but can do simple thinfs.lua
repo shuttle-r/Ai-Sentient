@@ -389,7 +389,6 @@ local function equipItem(itemName)
 end
 
 local LP = game.Players.LocalPlayer
-
 local function send(target)
 LP:RevokeFriendship(target)
 LP:RequestFriendship(target)
