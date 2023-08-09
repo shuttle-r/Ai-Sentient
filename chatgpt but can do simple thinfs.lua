@@ -1018,7 +1018,7 @@ local conversationHistory = {
     { role = "user", content = "equip bucket" },
     { role = "assistant", content = "Sure, Equip(\"bucket\")" },
     { role = "user", content = "add friend bsbxdbj83" },
-    { role = "assistant", content = "Sure, friend(\"bsbxdbj83\")" },
+    { role = "assistant", content = "Sure, Friend(\"bsbxdbj83\")" },
     { role = "user", content = " " },
 }
 
