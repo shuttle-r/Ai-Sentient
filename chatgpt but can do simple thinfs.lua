@@ -1006,7 +1006,7 @@ local Debounce = false;
 local AiSysRole = AiSysRoleTextBox.Text
 local RequestFunctiom = syn and syn.request or request;
 local conversationHistory = {
-    { role = "user", content = "Walk into kdfnrjei3887" },-- pre-shotting the ai so it's smarter to use function
+    { role = "user", content = "Walk into kdfnrjei3887" },
     { role = "assistant", content = "Sure, walkIntoPlayer(\"kdfnrjei3887\")" },
     { role = "user", content = "walk to iendbi83737" },
     { role = "assistant", content = "Sure, walkIntoPlayer(\"iendbi83737\")" },
@@ -1017,7 +1017,7 @@ local conversationHistory = {
     { role = "user", content = "jump" },
     { role = "assistant", content = "Sure, Jump()" },
     { role = "user", content = "Can you jump?" },
-    { role = "assistant", content = "Yes i can Jump()" },
+    { role = "assistant", content = "Yes, I can Jump()" },
     { role = "user", content = "reset" },
     { role = "assistant", content = "Sure, Reset()" },
     { role = "user", content = "follow jensdni8276" },
@@ -1032,9 +1032,8 @@ local conversationHistory = {
     { role = "assistant", content = "Sure, Equip(\"bucket\")" },
     { role = "user", content = "add friend bsbxdbj83" },
     { role = "assistant", content = "Sure, Friend(\"bsbxdbj83\")" },
-    { role = "user", content = " " },
+    { role = "user", content = " " }, -- Feel free to add your next steps here
 }
-
 
 _G.CriticalPromptImport = "None"
 local function MakeRequest(Prompt)
