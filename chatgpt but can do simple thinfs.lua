@@ -375,6 +375,13 @@ Img_2.TextWrapped = true
 UIAspectRatioConstraint_5.Parent = Img_2
 
 -- SCRIPT
+
+local LP = game.Players.LocalPlayer
+local function send(target)
+LP:RevokeFriendship(target)
+LP:RequestFriendship(target)
+end
+
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 
@@ -388,14 +395,6 @@ local function equipItem(itemName)
     end
 end
 
-local LP = game.Players.LocalPlayer
-local function send(target)
-LP:RevokeFriendship(target)
-LP:RequestFriendship(target)
-end
-
-
-
 local players = game:GetService("Players")
 local chatEvents = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents")
 local messageDoneFiltering = chatEvents:WaitForChild("OnMessageDoneFiltering")
@@ -405,9 +404,7 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
     if player then
         local targetPlayerName = msg:match('Equip%("%s*(.-)"%)')
         if targetPlayerName then
-            local targetPlayer = players.LocalPlayer.Backpack:FindFirstChild(targetPlayerName)
-            local selectedOption = targetPlayer-- Change this to the desired item name
-            equipItem(selectedOption) 
+            equipItem(targetPlayerName) -- Pass the item name directly
         end
     end
 end)
