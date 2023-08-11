@@ -1052,7 +1052,8 @@ local conversationHistory = {
     { role = "assistant", content = "Sure, Equip(\"bucket\")" },
     { role = "user", content = "add friend bsbxdbj83" },
     { role = "assistant", content = "Sure, Friend(\"bsbxdbj83\")" },
-    { role = "user", content = "always say the function" }, -- Feel free to add your next steps here
+    { role = "user", content = "always say the function" }, 
+    { role = "assistant", content = " " },
 }
 
 _G.CriticalPromptImport = "None"
