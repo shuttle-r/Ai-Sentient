@@ -1204,8 +1204,8 @@ end
 
 if #Response < 128 and _G.ChokeRemoteRespond == false then
     SayMessageRequest:FireServer(Response, "All")
-    delay(5,function()
-     task.wait(3)
+    delay(2,function()
+     task.wait(2)
      Debounce = false
 end)
 else
