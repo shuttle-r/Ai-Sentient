@@ -466,13 +466,9 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
         if targetPlayerName then
             local targetPlayer = players:FindFirstChild(targetPlayerName)
             if targetPlayer and targetPlayer.Character and targetPlayer.Character:FindFirstChild("HumanoidRootPart") then
-              if _G.FollowTru == false then
               _G.FollowTru = game:GetService("RunService").Heartbeat:Connect(function()
                 players.LocalPlayer.Character.Humanoid:MoveTo(targetPlayer.Character.HumanoidRootPart.Position)
               end)
-              else
-              _G.FollowTru:Disconnect()
-              end
             end
         end
     end
