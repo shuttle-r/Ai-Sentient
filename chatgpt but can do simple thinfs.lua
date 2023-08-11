@@ -1175,6 +1175,7 @@ local CheckChatGptStatus = string.gsub(HttpService:JSONDecode(response.Body).cho
 repeat wait()
 Debounce = true
 until CheckChatGptStatus == "stop" or CheckChatGptStatus == "length"
+wait(2)
 Debounce = false
 local Response = " " .. string.gsub(HttpService:JSONDecode(response.Body).choices[1].message.content, "\n", " ")
 table.insert(conversationHistory, {
