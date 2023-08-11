@@ -1198,7 +1198,7 @@ if #Response > 1 and _G.ChokeRemoteRespond == true then
 ChatGptStored.Text = Response
 delay(5,function()
 task.wait(5)
-Debounce = false
+--Debounce = false
 end)
 end
 
