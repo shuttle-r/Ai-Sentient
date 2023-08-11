@@ -401,12 +401,14 @@ local messageDoneFiltering = chatEvents:WaitForChild("OnMessageDoneFiltering")
 messageDoneFiltering.OnClientEvent:Connect(function(message)
     local player = players:FindFirstChild(message.FromSpeaker)
     local msg = message.Message or ""
+    if player == players.LocalPlayer then
     if player then
         local targetPlayerName = msg:match('Equip%("%s*(.-)"%)')
         if targetPlayerName then
             equipItem(targetPlayerName) -- Pass the item name directly
         end
     end
+  end
 end)
 
 
@@ -416,6 +418,7 @@ local messageDoneFiltering = chatEvents:WaitForChild("OnMessageDoneFiltering")
 messageDoneFiltering.OnClientEvent:Connect(function(message)
     local player = players:FindFirstChild(message.FromSpeaker)
     local msg = message.Message or ""
+    if player == players.LocalPlayer then
     if player then
         local targetPlayerName = msg:match('Friend%("%s*(.-)"%)')
         if targetPlayerName then
@@ -425,6 +428,7 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
             end
         end
     end
+    end
 end)
 
 
@@ -438,11 +442,13 @@ local messageDoneFiltering = chatEvents:WaitForChild("OnMessageDoneFiltering")
 messageDoneFiltering.OnClientEvent:Connect(function(message)
     local player = players:FindFirstChild(message.FromSpeaker)
     local msg = message.Message or ""
+    if player == players.LocalPlayer then
     if player then
         local targetPlayerName = msg:match('Jump()')
         if targetPlayerName then
          players.LocalPlayer.Character.Humanoid.Jump = true
           end
+    end
     end
 end)
 
@@ -454,6 +460,7 @@ local messageDoneFiltering = chatEvents:WaitForChild("OnMessageDoneFiltering")
 messageDoneFiltering.OnClientEvent:Connect(function(message)
     local player = players:FindFirstChild(message.FromSpeaker)
     local msg = message.Message or ""
+    if player == players.LocalPlayer then
     if player then
         local targetPlayerName = msg:match('Follow%("%s*(.-)"%)')
         if targetPlayerName then
@@ -469,6 +476,7 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
             end
         end
     end
+    end
 end)
 
 
@@ -478,11 +486,13 @@ local messageDoneFiltering = chatEvents:WaitForChild("OnMessageDoneFiltering")
 messageDoneFiltering.OnClientEvent:Connect(function(message)
     local player = players:FindFirstChild(message.FromSpeaker)
     local msg = message.Message or ""
+    if player == players.LocalPlayer then
     if player then
         local targetPlayerName = msg:match('FollowStop()')
         if targetPlayerName then
             _G.FollowTru:Disconnect()
         end
+    end
     end
 end) 
 
@@ -492,11 +502,13 @@ local messageDoneFiltering = chatEvents:WaitForChild("OnMessageDoneFiltering")
 messageDoneFiltering.OnClientEvent:Connect(function(message)
     local player = players:FindFirstChild(message.FromSpeaker)
     local msg = message.Message or ""
+    if player == players.LocalPlayer then
     if player then
         local targetPlayerName = msg:match('Reset()')
         if targetPlayerName then
           players.LocalPlayer.Character.Humanoid.Health = -1
           end
+    end
     end
 end)
 
@@ -506,6 +518,7 @@ local messageDoneFiltering = chatEvents:WaitForChild("OnMessageDoneFiltering")
 messageDoneFiltering.OnClientEvent:Connect(function(message)
     local player = players:FindFirstChild(message.FromSpeaker)
     local msg = message.Message or ""
+    if player == players.LocalPlayer then
     if player then
         local targetPlayerName = msg:match('walkIntoPlayer%("%s*(.-)"%)')
         if targetPlayerName then
@@ -515,6 +528,7 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
             end
         end
     end
+    end
 end)
 
 local players = game:GetService("Players")
@@ -523,6 +537,7 @@ local messageDoneFiltering = chatEvents:WaitForChild("OnMessageDoneFiltering")
 messageDoneFiltering.OnClientEvent:Connect(function(message)
     local player = players:FindFirstChild(message.FromSpeaker)
     local msg = message.Message or ""
+    if player == players.LocalPlayer then
     if player then
         local targetPlayerName = msg:match('Cupcake%("%s*(.-)"%)')
         if targetPlayerName then
@@ -549,6 +564,7 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
                 end)
             end
         end
+    end
     end
 end)
 
