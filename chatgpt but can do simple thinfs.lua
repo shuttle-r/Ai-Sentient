@@ -1196,7 +1196,7 @@ if #Response > 1 and _G.ChokeRemoteRespond == true then
 ChatGptStored.Text = Response
 delay(5,function()
 task.wait(5)
---Debounce = false
+Debounce = false
 end)
 end
 
@@ -1204,7 +1204,7 @@ if #Response < 128 and _G.ChokeRemoteRespond == false then
     SayMessageRequest:FireServer(Response, "All")
     delay(2,function()
      task.wait(2)
-    -- Debounce = false
+    Debounce = false
 end)
 else
     if #Response - 128 < 128 and _G.ChokeRemoteRespond == false then
@@ -1212,12 +1212,12 @@ else
         delay(2, function()
             SayMessageRequest:FireServer(string.sub(Response, 129), "All")
             task.wait(2)
-            --Debounce = false
+            Debounce = false
       end)
         else
 			SayMessageRequest:FireServer("--", "All");
 			task.wait(2);
--- 			Debounce = false;
+ 			Debounce = false;
     end
 end
 else
