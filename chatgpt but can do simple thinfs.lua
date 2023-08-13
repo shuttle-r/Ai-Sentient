@@ -1177,6 +1177,7 @@ local CheckChatGptStatus = string.gsub(HttpService:JSONDecode(response.Body).cho
 if CheckChatGptStatus == "stop" or CheckChatGptStatus == "length" then
   print("success")
   else
+  print("failed")
   return
 end
 local Response = " " .. string.gsub(HttpService:JSONDecode(response.Body).choices[1].message.content, "\n", " ")
