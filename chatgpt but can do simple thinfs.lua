@@ -833,7 +833,7 @@ end
 
 local AiSysRoleTextBox = Instance.new("TextBox")
 AiSysRoleTextBox.Size = UDim2.new(1, 0, 1, 0)
-AiSysRoleTextBox.Text = "Loading"
+AiSysRoleTextBox.Text = "Ai Role here"
 AiSysRoleTextBox.TextColor3 = Color3.new(255, 255, 255)
 AiSysRoleTextBox.BackgroundTransparency = 1
 AiSysRoleTextBox.Font = Enum.Font.SourceSansBold
