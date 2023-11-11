@@ -986,7 +986,7 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
         if message == "/--" then
          -- // SETTINGS \\ 
 local SECRET_KEY = OpenaiKeys.Text --https://beta.openai.com/account/api-keys
-local CLOSE_RANGE_ONLY = true;
+local CLOSE_RANGE_ONLY = false;
 
 _G.MESSAGE_SETTINGS = {
     ["MINIMUM_CHARACTERS"] = miniChar,
@@ -995,7 +995,7 @@ _G.MESSAGE_SETTINGS = {
 };
 
 _G.WHITELISTED = { --Only works if CLOSE_RANGE_ONLY is disabled
-    ["redter01"] = true,
+    ["WeDont_Exist"] = true,
 };
 
 
