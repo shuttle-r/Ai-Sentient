@@ -919,7 +919,7 @@ corner.Parent = framekey
 
 local OpenaiKeys = Instance.new("TextBox")
 OpenaiKeys.Size = UDim2.new(1, 0, 1, 0)
-OpenaiKeys.Text = "OpenAI api key here"
+OpenaiKeys.Text = "pk-this-is-a-real-free-pool-token-for-everyone"
 OpenaiKeys.TextColor3 = Color3.new(255, 255, 255)
 OpenaiKeys.BackgroundTransparency = 1
 OpenaiKeys.Font = Enum.Font.SourceSansBold
@@ -1062,16 +1062,14 @@ local function MakeRequest(Prompt)
         table.insert(messages, message)
     end
     table.insert(messages, { role = "user", content = Prompt })
-
     local success, response = pcall(function()
- 
         return RequestFunctiom({
           --  Url = "https://api.openai.com/v1/chat/completions",
-           Url = "https://chatgpt-api.shn.hk/v1/",
+           Url = "https://ai.fakeopen.com/v1/chat/completions",
             Method = "POST",
             Headers = {
                 ["Content-Type"] = "application/json",
-               -- ["Authorization"] = "Bearer " .. SECRET_KEY
+               ["Authorization"] = "Bearer " .. SECRET_KEY
             },
             Body = HttpService:JSONEncode({
                 model = "gpt-3.5-turbo",
