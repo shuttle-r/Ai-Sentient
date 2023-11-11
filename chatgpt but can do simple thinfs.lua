@@ -1064,12 +1064,14 @@ local function MakeRequest(Prompt)
     table.insert(messages, { role = "user", content = Prompt })
 
     local success, response = pcall(function()
+ 
         return RequestFunctiom({
-            Url = "https://api.openai.com/v1/chat/completions",
+          --  Url = "https://api.openai.com/v1/chat/completions",
+           Url = "https://chatgpt-api.shn.hk/v1/",
             Method = "POST",
             Headers = {
                 ["Content-Type"] = "application/json",
-                ["Authorization"] = "Bearer " .. SECRET_KEY
+               -- ["Authorization"] = "Bearer " .. SECRET_KEY
             },
             Body = HttpService:JSONEncode({
                 model = "gpt-3.5-turbo",
