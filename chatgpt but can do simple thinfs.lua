@@ -489,7 +489,7 @@ local wpidx = 1
 local char = game.Players.LocalPlayer.Character
 local hum = char.Humanoid
 local hrp = char.HumanoidRootPart
-local treasure = Players.Character[targetPlayer]:FindFirstChild("HumanoidRootPart")
+local treasure = Players[targetPlayer].Character:FindFirstChild("HumanoidRootPart")
 --local treasure = game.Workspace.Goal
 
 
