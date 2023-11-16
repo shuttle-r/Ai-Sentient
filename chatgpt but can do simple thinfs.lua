@@ -466,9 +466,213 @@ messageDoneFiltering.OnClientEvent:Connect(function(message)
         if targetPlayerName then
             local targetPlayer = players:FindFirstChild(targetPlayerName)
             if targetPlayer and targetPlayer.Character and targetPlayer.Character:FindFirstChild("HumanoidRootPart") then
-              _G.FollowTru = game:GetService("RunService").Heartbeat:Connect(function()
+             --[[ _G.FollowTru = game:GetService("RunService").Heartbeat:Connect(function()
                 players.LocalPlayer.Character.Humanoid:MoveTo(targetPlayer.Character:FindFirstChild("HumanoidRootPart").Position)
-              end)
+              end)]]
+              
+
+local Players = game:GetService("Players")
+local pfs = game:GetService("PathfindingService")
+local wps = {}
+local path = pfs:CreatePath({
+  AgentRadius = 2,
+  AgentHeight = 3,
+  AgentCanJump = true,
+  AgentCanClimb = true,
+  Costs = {
+    Water = 100.0,
+    Climb = 1,
+    
+  }
+})
+local wpidx = 1
+local char = game.Players.LocalPlayer.Character
+local hum = char.Humanoid
+local hrp = char.HumanoidRootPart
+local treasure = Players.Character[targetPlayer]:FindFirstChild("HumanoidRootPart")
+--local treasure = game.Workspace.Goal
+
+
+
+
+
+
+
+spawn(function()
+local function followpath(goal)
+  path:ComputeAsync(hrp.Position, goal.Position)
+  wps = {}
+  if path.Status == Enum.PathStatus.Success then
+    wps = path:GetWaypoints()
+    wpidx = 1
+    hum:MoveTo(wps[wpidx].Position)
+    else
+  treasure = Players:GetPlayers()[math.random(1, #Players:GetPlayers())].Character:WaitForChild("HumanoidRootPart")
+end
+end  
+
+hum.MoveToFinished:Connect(function(reached)
+  if reached and wpidx < #wps then
+wpidx = wpidx + 1
+    if wps[wpidx].Action == Enum.PathWaypointAction.Jump then
+   print("Jump action need")
+    end
+ hum:MoveTo(wps[wpidx].Position)
+    end
+end)
+
+path.Blocked:Connect(function(Blockedwpidx)
+  if Blockedwpidx > wpidx then
+    followpath(treasure)
+    end
+end)
+
+
+
+  
+  
+
+followpath(treasure)
+while true do
+  wait(4)
+followpath(treasure)
+end
+end)
+
+
+spawn(function()
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local h = char:FindFirstChild("Humanoid")
+
+local UIS = game:GetService("UserInputService")
+
+local state
+local laststate
+local lastcf
+
+while true do
+    wait()
+    char = plr.Character
+    h = char:FindFirstChild("Humanoid")
+    laststate = state
+    state = h:GetState()
+    if laststate ~= state and state == Enum.HumanoidStateType.Freefall and laststate ~= Enum.HumanoidStateType.Jumping then
+        char.HumanoidRootPart.CFrame = lastcf
+        char.HumanoidRootPart.Velocity = Vector3.new(char.HumanoidRootPart.Velocity.X, h.JumpPower, char.HumanoidRootPart.Velocity.Z)
+    end
+    lastcf = char.HumanoidRootPart.CFrame
+end
+
+
+end)
+
+--[[spawn(function()
+while true do
+  wait()
+local playerisGay = game.Players.LocalPlayer.Character.HumanoidRootPart
+local direction = treasure.Position - playerisGay.Position
+local params = RaycastParams.new()
+params.FilterType = Enum.RaycastFilterType.Whitelist
+params.FilterDescendantsInstances = {treasure}
+local raycastResult = workspace:Raycast(playerisGay.Position, direction)
+if raycastResult and raycastResult.Instance == treasure then
+ hum:MoveTo(treasure.Position)
+end
+end
+end)]]
+
+
+spawn(function()
+pcall(function()
+  
+  for i,v in pairs(game.Workspace:GetChildren()) do
+   if v.Name == "itlog" then
+     v:Destroy()
+  end
+  end
+end)
+local Players = game:GetService("Players")
+local PathfindingService = game:GetService("PathfindingService")
+
+-- Create a ball for the target and add it to the player's character
+
+
+-- Target a random player and set the initial target ball position
+
+-- Create a ball for each waypoint and add it to the workspace
+local waypointBalls = {}
+while true do
+    -- Calculate pathfinding and move the player towards the target
+    local Path = pfs:CreatePath({
+  AgentRadius = 2,
+  AgentHeight = 3,
+  AgentCanJump = true,
+  AgentCanClimb = true,
+  Costs = {
+    Water = 100.0,
+    Climb = 1,
+  }
+})
+    Path:ComputeAsync(Players.LocalPlayer.Character.HumanoidRootPart.Position, treasure.Position)
+    local Waypoints = Path:GetWaypoints()
+    
+    -- Remove old waypoint balls
+    for _, ball in ipairs(waypointBalls) do
+        ball:Destroy()
+    end
+    
+    -- Create new waypoint ball
+    waypointBalls = {}
+    for i, waypoint in ipairs(Waypoints) do
+        local ball = Instance.new("Part")
+        ball.Shape = Enum.PartType.Ball
+        ball.Name = "itlog"
+        ball.CanCollide = false
+        ball.Material = Enum.Material.Neon
+        ball.Parent = Workspace
+        ball.Size = Vector3.new(0.4, 0.4, 0.4)
+        ball.Anchored = true
+        ball.Color = Color3.fromRGB(0, 255, 0)
+        ball.Position = waypoint.Position
+        
+
+        waypointBalls[i] = ball
+    end
+ 
+  
+  
+    
+  
+  
+  
+
+    -- Check if the target is close enou
+
+    -- Get a new random target after reaching the current onee
+end    
+end)
+
+
+
+spawn(function()
+while true do
+ wait(1)
+_G.HeadSize = 3
+for i,v in next, game:GetService('Players'):GetPlayers() do
+if v.Name ~= game:GetService('Players').LocalPlayer.Name  then
+pcall(function()
+v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+v.Character.HumanoidRootPart.Transparency = 0.7
+v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Grey")
+v.Character.HumanoidRootPart.Material = "Neon"
+end)
+end
+end
+end
+end)
+
+
             end
         end
     end
