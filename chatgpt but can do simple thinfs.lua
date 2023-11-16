@@ -507,7 +507,7 @@ local function followpath(goal)
     wpidx = 1
     hum:MoveTo(wps[wpidx].Position)
     else
-  treasure = Players:GetPlayers()[math.random(1, #Players:GetPlayers())].Character:WaitForChild("HumanoidRootPart")
+ -- treasure = Players:GetPlayers()[math.random(1, #Players:GetPlayers())].Character:WaitForChild("HumanoidRootPart")
 end
 end  
 
