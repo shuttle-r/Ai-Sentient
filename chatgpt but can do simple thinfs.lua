@@ -1227,7 +1227,7 @@ local Debounce = false;
 local AiSysRole = AiSysRoleTextBox.Text
 local RequestFunctiom = syn and syn.request or request;
 local conversationHistory = {
-    { role = "user", content = "Hi" },
+    --[[{ role = "user", content = "Hi" },
     { role = "assistant", content = "hello!" },
     { role = "user", content = "Walk into kdfnrjei3887" },
     { role = "assistant", content = "Sure, walkIntoPlayer(\"kdfnrjei3887\")" },
@@ -1256,7 +1256,7 @@ local conversationHistory = {
     { role = "user", content = "add friend bsbxdbj83" },
     { role = "assistant", content = "Sure, Friend(\"bsbxdbj83\")" },
     { role = "user", content = "always say the function" }, 
-    { role = "assistant", content = " " },
+    { role = "assistant", content = " " },]]
 }
 
 _G.CriticalPromptImport = "None"
