@@ -567,7 +567,20 @@ end)
 
 
 
-
+function tableToString(t)
+  if type(t) == "table" then
+    local s = ""
+    for k, v in pairs(t) do
+      if s ~= "" then
+        s = s .. ", "
+      end
+      s = s .. tableToString(k) .. " = " .. tableToString(v)
+    end
+    return s
+  else    -- Return the argument as a string
+    return tostring(t)
+  end
+end
 
 local TweenService = game:GetService("TweenService")
 Close.MouseButton1Click:Connect(function()
@@ -1077,20 +1090,7 @@ NearPlayerTable = getNearestPlayerNames(position, maxPlayers)
 local function tableToCommaString(tbl)
     return table.concat(tbl, ", ")
 end 
-function tableToString(t)
-  if type(t) == "table" then
-    local s = ""
-    for k, v in pairs(t) do
-      if s ~= "" then
-        s = s .. ", "
-      end
-      s = s .. tableToString(k) .. " = " .. tableToString(v)
-    end
-    return s
-  else    -- Return the argument as a string
-    return tostring(t)
-  end
-end
+
 
 local nearestPlayersString = tableToCommaString(NearPlayerTable)
 local ConvoHistory = tableToString(conversationHistory)
