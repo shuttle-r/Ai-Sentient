@@ -1104,24 +1104,11 @@ Debounce = true
 local success, response = pcall(function()
         return MakeRequest(_G.CriticalPromptImport.."\n\nHuman:"..Message.."\n\nAI:")
     end)
-
-
-
-
-
-
-
-
-
 local Response = " " .. string.gsub(HttpService:JSONDecode(response.Body).candidates[1].output, "\n", " ")
+table.insert(conversationHistory, {
+    "Human("..NameOfThePlayer.."):"..Message.."\n\nAI:"..Response
+})
 
-
-
- 
-
- 
-
-  
 if #Response > 1 and _G.ChokeRemoteRespond == true then
 ChatGptStored.Text = Response
 delay(2,function()
