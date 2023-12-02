@@ -1055,10 +1055,10 @@ local function MakeRequest(Prompt)
             prompt = {
               text = Prompt
             },
-            temperature = 0.3,
+            temperature = 0.9,
             candidateCount = 1,
-            topP = 0.60,
-            topK = 50,
+            topP = 0.90,
+            topK = 80,
             maxOutputTokens = 128,
             stopSequences = {"Human:", "AI:"},
             })
