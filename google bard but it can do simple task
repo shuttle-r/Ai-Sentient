@@ -1122,7 +1122,7 @@ local success, response = pcall(function()
     end)
 local Response = " " .. string.gsub(HttpService:JSONDecode(response.Body).candidates[1].output, "\n", " ")
 table.insert(conversationHistory, {
-   { Human"("..tostring(NameOfThePlayer).."):"..Message.."\n\nAI:"..Response }
+    { "Human("..tostring(NameOfThePlayer).."):"..Message.."\n\nAI:"..Response }
 })
 
 if #Response > 1 and _G.ChokeRemoteRespond == true then
