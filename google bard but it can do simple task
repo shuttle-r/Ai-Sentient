@@ -1024,8 +1024,7 @@ local Debounce = false;
 local AiSysRole = AiSysRoleTextBox.Text
 local RequestFunctiom = syn and syn.request or request;
 local conversationHistory = {
-    "Human(NameOfPlayer):"..Humantext.."\n\nAi:"..AiText,
-    "Human(NameOfPlayer):"..Humantext.."\n\nAi:"..AiText,
+  
 }
 
 _G.CriticalPromptImport = "None"
