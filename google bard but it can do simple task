@@ -568,19 +568,30 @@ end)
 
 
 function tableToString(t)
-  if type(t) == "table" then
-    local s = ""
-    for k, v in pairs(t) do
-      if s ~= "" then
-        s = s .. ", "
-      end
-      s = s .. tableToString(k) .. " = " .. tableToString(v)
+    local function stringify(value)
+        if type(value) == "table" then
+            return tableToString(value)  -- Recursively call tableToString for nested tables
+        else
+            return tostring(value)  -- Convert non-table values to a string
+        end
     end
-    return s
-  else    -- Return the argument as a string
-    return tostring(t)
-  end
+
+    if type(t) == "table" then
+        local s = "{"
+        local isFirst = true
+        for k, v in pairs(t) do
+            if not isFirst then
+                s = s .. ", "
+            end
+            s = s .. "[" .. stringify(k) .. "]=" .. stringify(v)
+            isFirst = false
+        end
+        return s .. "}"
+    else
+        return tostring(t)
+    end
 end
+
 
 local TweenService = game:GetService("TweenService")
 Close.MouseButton1Click:Connect(function()
