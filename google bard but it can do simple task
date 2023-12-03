@@ -583,7 +583,7 @@ function tableToString(t)
             if not isFirst then
                 s = s .. ", "
             end
-            s = s .. "[" .. stringify(k) .. "]=" .. stringify(v)
+            s = s .. stringify(k) .. "=" .. stringify(v)
             isFirst = false
         end
         return s .. "}"
