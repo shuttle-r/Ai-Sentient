@@ -1036,9 +1036,7 @@ local OnMessageDoneFiltering = ReplicatedStorage:WaitForChild("DefaultChatSystem
 local Debounce = false;
 local AiSysRole = AiSysRoleTextBox.Text
 local RequestFunctiom = syn and syn.request or request;
-local conversationHistory = {
-  
-}
+local conversationHistory = {}
 
 _G.CriticalPromptImport = "None"
 
@@ -1120,9 +1118,9 @@ local success, response = pcall(function()
         return MakeRequest(_G.CriticalPromptImport.."\n\nHuman:"..Message.."\n\nAI:")
     end)
 local Response = " " .. string.gsub(HttpService:JSONDecode(response.Body).candidates[1].output, "\n", " ")
-table.insert(conversationHistory, {
+conversationHistory[#conversationHistory + 1] = {
     { "Human("..tostring(NameOfThePlayer).."):"..Message.."\n\nAI:"..Response }
-})
+}
 
 if #Response > 1 and _G.ChokeRemoteRespond == true then
 ChatGptStored.Text = Response
