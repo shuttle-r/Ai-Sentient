@@ -317,7 +317,7 @@ function trace_Path(final_Node)
 	until current.Parent == workspace
 	end)
 end
-
+local TracedPath = false
 function scan_Field()
     pathPositions = {}
     local final = nil
@@ -354,6 +354,7 @@ function scan_Field()
         end
         final = best[1]
     until #open_List <= 0 or (best[1].Position - goal.Position).Magnitude <= node_Spacing * 1.5
+    TracedPath = true
     trace_Path(final)
 end
 
@@ -418,6 +419,7 @@ local targetPosition = _G.BallFloor.Position
         targetPosition = Vector3.new(targetPosition.X, humanoidRootPart.Position.Y, targetPosition.Z)
         humanoidRootPart.CFrame = CFrame.lookAt(humanoidRootPart.Position, targetPosition, Vector3.new(0, 1, 0))
 end
+
 local alreadyDone = false
 local sams = false
 local errored = false
