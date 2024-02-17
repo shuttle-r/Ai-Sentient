@@ -339,8 +339,9 @@ function scan_Field()
         if best[1] ~= start then
             best[1].BrickColor = BrickColor.Blue()
         end
+        pcall(function()
         table.remove(open_List, best[2])
-
+        end)
         for _, vector in ipairs(valid_Directions) do
             local ray_Part, ray_Pos = cast_Ray(best[1].Position, vector)
             if not ray_Part then
