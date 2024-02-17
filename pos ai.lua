@@ -445,6 +445,7 @@ textBox:GetPropertyChangedSignal("Text"):Connect(function() -- connect a functio
    spawn(function()StaterPathNoFinish()end)
    wait(2)
    StaterPath()
+   wait(1)
    if alreadyDone == true then return end
 alreadyDone = true    
 while true do
