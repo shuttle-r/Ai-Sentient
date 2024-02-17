@@ -420,6 +420,7 @@ local targetPosition = _G.BallFloor.Position
 end
 local alreadyDone = false
 local sams = false
+local errored = false
 local textBox = game:GetService("Players").LocalPlayer.PlayerGui.announcer.TextBox -- get the TextBox object
 textBox:GetPropertyChangedSignal("Text"):Connect(function() -- connect a function to the event
     if textBox.Text == "Starting Game" then -- check if the text is equal to "Starting Game"
@@ -453,6 +454,10 @@ print("Suc")
 if sams == true then return end
 sams = true
 while true do
+  if errored == true then 
+    break
+    return
+   end
   local succ, datas = xpcall(function()
 scan_Field()
 local reversedPath = {}
@@ -494,6 +499,7 @@ wait(5)
 end, function()
 print("erroeed")
 sams = false
+errored = true
 end)
 end
 end
