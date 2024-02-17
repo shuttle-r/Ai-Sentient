@@ -1,4 +1,4 @@
-
+print("Autofarm but undetectable")
 
 local Algo = Instance.new ("ScreenGui")
 Algo.Parent = game.Players.LocalPlayer:WaitForChild ("PlayerGui")
