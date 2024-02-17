@@ -431,24 +431,31 @@ textBox:GetPropertyChangedSignal("Text"):Connect(function() -- connect a functio
    SpawnEndNode()
    StartSpawn()
    spawn(function()StaterPathNoFinish()end)
+   repeat wait() until TracedPath == true
+ wait(3)
+   StartSpawn()
+   spawn(function()StaterPathNoFinish()end)
+   repeat wait() until TracedPath == true
    wait(3)
    StartSpawn()
    spawn(function()StaterPathNoFinish()end)
+   repeat wait() until TracedPath == true
    wait(3)
    StartSpawn()
    spawn(function()StaterPathNoFinish()end)
+   repeat wait() until TracedPath == true
    wait(3)
    StartSpawn()
    spawn(function()StaterPathNoFinish()end)
+   repeat wait() until TracedPath == true
    wait(3)
    StartSpawn()
    spawn(function()StaterPathNoFinish()end)
+   repeat wait() until TracedPath == true
    wait(3)
    StartSpawn()
    spawn(function()StaterPathNoFinish()end)
-   wait(3)
-   StartSpawn()
-   spawn(function()StaterPathNoFinish()end)
+   repeat wait() until TracedPath == true
    wait(3)
    StaterPath()
    wait(1)
