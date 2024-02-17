@@ -335,7 +335,9 @@ function scan_Field()
             end
             end)
         end
+        pcall(function()
         table.insert(closed_List, best[1])
+        end)
         if best[1] ~= start then
             best[1].BrickColor = BrickColor.Blue()
         end
