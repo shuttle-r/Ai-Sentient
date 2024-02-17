@@ -419,6 +419,7 @@ local targetPosition = _G.BallFloor.Position
         humanoidRootPart.CFrame = CFrame.lookAt(humanoidRootPart.Position, targetPosition, Vector3.new(0, 1, 0))
 end
 local alreadyDone = false
+local sams = false
 local textBox = game:GetService("Players").LocalPlayer.PlayerGui.announcer.TextBox -- get the TextBox object
 textBox:GetPropertyChangedSignal("Text"):Connect(function() -- connect a function to the event
     if textBox.Text == "Starting Game" then -- check if the text is equal to "Starting Game"
@@ -448,7 +449,11 @@ textBox:GetPropertyChangedSignal("Text"):Connect(function() -- connect a functio
    StaterPath()
    wait(1)
 print("Suc")   
+
+if sams == true then return end
+sams = true
 while true do
+  local succ, datas = xpcall(function()
 scan_Field()
 local reversedPath = {}
 for i = #pathPositions, 1, -1 do
@@ -486,6 +491,10 @@ local targetPosition = _G.BallFloor.Position
         targetPosition = Vector3.new(targetPosition.X, humanoidRootPart.Position.Y, targetPosition.Z)
         humanoidRootPart.CFrame = CFrame.lookAt(humanoidRootPart.Position, targetPosition, Vector3.new(0, 1, 0))
 wait(5)
+end, function()
+print("erroeed")
+sams = false
+end)
 end
 end
 end)
