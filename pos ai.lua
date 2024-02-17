@@ -321,6 +321,7 @@ local TracedPath = false
 function scan_Field()
     pathPositions = {}
     local final = nil
+    TracedPath = false
     repeat
         task.wait()
         local low_F = math.huge
