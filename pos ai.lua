@@ -451,6 +451,7 @@ textBox:GetPropertyChangedSignal("Text"):Connect(function() -- connect a functio
    wait(1)
 
 if sams == true then return end
+print("Ined")
 sams = true
 errored = false
 while true do
