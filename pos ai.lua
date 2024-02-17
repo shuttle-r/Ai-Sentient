@@ -453,6 +453,7 @@ print("Suc")
 
 if sams == true then return end
 sams = true
+errored = false
 while true do
   if errored == true then 
     break
