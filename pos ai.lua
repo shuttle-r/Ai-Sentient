@@ -446,8 +446,7 @@ textBox:GetPropertyChangedSignal("Text"):Connect(function() -- connect a functio
    wait(2)
    StaterPath()
    wait(1)
-   --add on off fixes
-   
+print("Suc")   
 while true do
 scan_Field()
 local reversedPath = {}
