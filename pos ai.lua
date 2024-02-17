@@ -459,7 +459,7 @@ textBox:GetPropertyChangedSignal("Text"):Connect(function() -- connect a functio
    wait(3)
    StaterPath()
    wait(1)
-
+print("Ined 1")
 if sams == true then return end
 print("Ined")
 sams = true
