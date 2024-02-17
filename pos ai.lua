@@ -326,12 +326,14 @@ function scan_Field()
         local low_F = math.huge
         local best = nil
         for l, node in ipairs(open_List) do
+          pcall(function()
             local H = (node.Position - goal.Position).Magnitude * node_Spacing
             local G = node:FindFirstChild("G").Value
             if G + H < low_F then
                 low_F = G + H
                 best = { node, l }
             end
+            end)
         end
         table.insert(closed_List, best[1])
         if best[1] ~= start then
