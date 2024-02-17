@@ -460,9 +460,7 @@ textBox:GetPropertyChangedSignal("Text"):Connect(function() -- connect a functio
    StaterPath()
    wait(1)
 print("Ined 1")
-if sams == true then return end
 print("Ined")
-sams = true
 errored = false
 while true do
   if errored == true then 
