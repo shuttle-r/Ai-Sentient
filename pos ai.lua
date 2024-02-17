@@ -457,7 +457,6 @@ errored = false
 while true do
   if errored == true then 
     break
-    return
    end
   local succ, datas = xpcall(function()
 scan_Field()
