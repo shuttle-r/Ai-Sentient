@@ -424,6 +424,7 @@ end
 local alreadyDone = false
 local sams = false
 local erroredInten = false
+_G.looprun = false
 local textBox = game:GetService("Players").LocalPlayer.PlayerGui.announcer.TextBox -- get the TextBox object
 textBox:GetPropertyChangedSignal("Text"):Connect(function() -- connect a function to the event
     if textBox.Text == "Starting Game" then -- check if the text is equal to "Starting Game"
@@ -459,9 +460,11 @@ textBox:GetPropertyChangedSignal("Text"):Connect(function() -- connect a functio
    wait(3)
    StaterPath()
    wait(1)
-   if sams == true then return end
-   sams = true
 while task.wait() do
+  if _G.looprun == true then
+    _G.looprun = false
+    break
+  end
   print("Succ Loop")
 scan_Field()
 local reversedPath = {}
@@ -499,6 +502,7 @@ goal = workspace[randomString]
 local targetPosition = _G.BallFloor.Position
         targetPosition = Vector3.new(targetPosition.X, humanoidRootPart.Position.Y, targetPosition.Z)
         humanoidRootPart.CFrame = CFrame.lookAt(humanoidRootPart.Position, targetPosition, Vector3.new(0, 1, 0))
+_G.looprun = true
  wait(3)
 end
 end
