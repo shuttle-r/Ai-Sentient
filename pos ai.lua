@@ -460,12 +460,12 @@ textBox:GetPropertyChangedSignal("Text"):Connect(function() -- connect a functio
    wait(3)
    StaterPath()
    wait(1)
-_G.looprun = true
 while task.wait() do
   if _G.looprun == true then
     _G.looprun = false
     break
   end
+_G.looprun = true
   print("Succ Loop")
 scan_Field()
 local reversedPath = {}
