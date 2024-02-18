@@ -459,15 +459,12 @@ textBox:GetPropertyChangedSignal("Text"):Connect(function() -- connect a functio
    wait(3)
    StaterPath()
    wait(1)
-print("Ined 1")
-print("Ined")
 errored = false
 while true do
   if errored == true then 
     print("breaked")
     break
    end
-  local succ, datas = xpcall(function()
 scan_Field()
 local reversedPath = {}
 for i = #pathPositions, 1, -1 do
@@ -505,11 +502,7 @@ local targetPosition = _G.BallFloor.Position
         targetPosition = Vector3.new(targetPosition.X, humanoidRootPart.Position.Y, targetPosition.Z)
         humanoidRootPart.CFrame = CFrame.lookAt(humanoidRootPart.Position, targetPosition, Vector3.new(0, 1, 0))
 wait(3)
-end, function()
-print("erroeed")
-sams = false
-errored = true
-end)
+
 end
 end
 end)
