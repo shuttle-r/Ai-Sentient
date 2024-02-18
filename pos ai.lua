@@ -459,12 +459,7 @@ textBox:GetPropertyChangedSignal("Text"):Connect(function() -- connect a functio
    wait(3)
    StaterPath()
    wait(1)
-errored = false
 while true do
-  if errored == true then 
-    print("breaked")
-    break
-   end
 scan_Field()
 local reversedPath = {}
 for i = #pathPositions, 1, -1 do
