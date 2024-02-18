@@ -423,7 +423,7 @@ end
 
 local alreadyDone = false
 local sams = false
-local errored = false
+local erroredInten = false
 local textBox = game:GetService("Players").LocalPlayer.PlayerGui.announcer.TextBox -- get the TextBox object
 textBox:GetPropertyChangedSignal("Text"):Connect(function() -- connect a function to the event
     if textBox.Text == "Starting Game" then -- check if the text is equal to "Starting Game"
@@ -459,12 +459,8 @@ textBox:GetPropertyChangedSignal("Text"):Connect(function() -- connect a functio
    wait(3)
    StaterPath()
    wait(1)
-while true do
+game:GetService("RunService").Heartbeat:Connect(function()
   print("test")
-  if errored == true then
-    print("breaked")
-    break
-  end
 scan_Field()
 local reversedPath = {}
 for i = #pathPositions, 1, -1 do
@@ -503,7 +499,7 @@ local targetPosition = _G.BallFloor.Position
         humanoidRootPart.CFrame = CFrame.lookAt(humanoidRootPart.Position, targetPosition, Vector3.new(0, 1, 0))
 wait(3)
 
-end
+end)
 end
 end)
 end)
