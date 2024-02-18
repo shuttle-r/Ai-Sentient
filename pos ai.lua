@@ -460,6 +460,7 @@ textBox:GetPropertyChangedSignal("Text"):Connect(function() -- connect a functio
    StaterPath()
    wait(1)
    if sams == true then return end
+   sams = true
 game:GetService("RunService").Heartbeat:Connect(function()
   print("test")
 scan_Field()
