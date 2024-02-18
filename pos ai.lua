@@ -499,8 +499,7 @@ goal = workspace[randomString]
 local targetPosition = _G.BallFloor.Position
         targetPosition = Vector3.new(targetPosition.X, humanoidRootPart.Position.Y, targetPosition.Z)
         humanoidRootPart.CFrame = CFrame.lookAt(humanoidRootPart.Position, targetPosition, Vector3.new(0, 1, 0))
-wait(3)
-
+ wait(3)
 end)
 end
 end)
