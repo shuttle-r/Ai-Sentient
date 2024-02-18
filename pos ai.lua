@@ -421,10 +421,6 @@ local targetPosition = _G.BallFloor.Position
         humanoidRootPart.CFrame = CFrame.lookAt(humanoidRootPart.Position, targetPosition, Vector3.new(0, 1, 0))
 end
 
-local alreadyDone = false
-local sams = false
-local erroredInten = false
-_G.looprun = false
 local textBox = game:GetService("Players").LocalPlayer.PlayerGui.announcer.TextBox -- get the TextBox object
 textBox:GetPropertyChangedSignal("Text"):Connect(function() -- connect a function to the event
     if textBox.Text == "Starting Game" then -- check if the text is equal to "Starting Game"
@@ -461,12 +457,6 @@ textBox:GetPropertyChangedSignal("Text"):Connect(function() -- connect a functio
    StaterPath()
    wait(1)
 while task.wait() do
-  if _G.looprun == true then
-    _G.looprun = false
-    break
-  end
-_G.looprun = true
-  print("Succ Loop")
 scan_Field()
 local reversedPath = {}
 for i = #pathPositions, 1, -1 do
