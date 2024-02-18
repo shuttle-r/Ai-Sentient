@@ -461,7 +461,7 @@ textBox:GetPropertyChangedSignal("Text"):Connect(function() -- connect a functio
    wait(1)
    if sams == true then return end
    sams = true
-game:GetService("RunService").Heartbeat:Connect(function()
+while task.wait() do
   print("Succ Loop")
 scan_Field()
 local reversedPath = {}
@@ -500,7 +500,7 @@ local targetPosition = _G.BallFloor.Position
         targetPosition = Vector3.new(targetPosition.X, humanoidRootPart.Position.Y, targetPosition.Z)
         humanoidRootPart.CFrame = CFrame.lookAt(humanoidRootPart.Position, targetPosition, Vector3.new(0, 1, 0))
  wait(3)
-end)
+end
 end
 end)
 end)
