@@ -460,6 +460,7 @@ textBox:GetPropertyChangedSignal("Text"):Connect(function() -- connect a functio
    caller = true
 end
 while true do
+  wait()
 if caller == true then
 scan_Field()
 local reversedPath = {}
