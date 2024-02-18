@@ -459,7 +459,8 @@ textBox:GetPropertyChangedSignal("Text"):Connect(function() -- connect a functio
    StaterPath()
    caller = true
 end
-while caller == true do wait()
+while true do
+if caller == true then
 scan_Field()
 local reversedPath = {}
 for i = #pathPositions, 1, -1 do
@@ -498,6 +499,7 @@ local targetPosition = _G.BallFloor.Position
         targetPosition = Vector3.new(targetPosition.X, humanoidRootPart.Position.Y, targetPosition.Z)
         humanoidRootPart.CFrame = CFrame.lookAt(humanoidRootPart.Position, targetPosition, Vector3.new(0, 1, 0))
  wait(3)
+end
 end
 end)
 end)
