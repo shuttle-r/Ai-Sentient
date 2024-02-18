@@ -462,7 +462,7 @@ textBox:GetPropertyChangedSignal("Text"):Connect(function() -- connect a functio
    if sams == true then return end
    sams = true
 game:GetService("RunService").Heartbeat:Connect(function()
-  print("test")
+  print("Succ Loop")
 scan_Field()
 local reversedPath = {}
 for i = #pathPositions, 1, -1 do
