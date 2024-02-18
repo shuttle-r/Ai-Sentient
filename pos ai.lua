@@ -425,7 +425,7 @@ local caller = false
 local textBox = game:GetService("Players").LocalPlayer.PlayerGui.announcer.TextBox -- get the TextBox object
 textBox:GetPropertyChangedSignal("Text"):Connect(function() -- connect a function to the event
     if textBox.Text == "Starting Game" then -- check if the text is equal to "Starting Game"
-   caller = true
+   caller = false
    wait(1)
    SpawnEndNode()
    StartSpawn()
