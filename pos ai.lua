@@ -320,6 +320,8 @@ end
 local TracedPath = false
 function scan_Field()
     pathPositions = {}
+    open_List = {workspace.Start}
+    closed_List = {}
     local final = nil
     TracedPath = false
     repeat
