@@ -356,6 +356,7 @@ function scan_Field()
         final = best[1]
     until #open_List <= 0 or (best[1].Position - goal.Position).Magnitude <= node_Spacing * 1.5
     TracedPath = true
+    print("scan fin")
     trace_Path(final)
 end
 
