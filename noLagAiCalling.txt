@@ -1,6 +1,8 @@
 --[[
 	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
 ]]
+settings().Rendering.QualityLevel = "Level01"
+settings().Rendering.GraphicsMode = "Vulkan"
 _G.Settings = {
     Players = {
         ["Ignore Me"] = true, -- Ignore your Character
