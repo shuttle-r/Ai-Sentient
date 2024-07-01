@@ -1072,8 +1072,7 @@ local function MakeRequest(Prompt)
     table.insert(messages, { role = "user", content = Prompt })
     local success, response = pcall(function()
         return RequestFunctiom({
-          --  Url = "https://api.openai.com/v1/chat/completions",
-           Url = "https://ai.fakeopen.com/v1/chat/completions",
+            Url = "https://api.openai.com/v1/chat/completions",
             Method = "POST",
             Headers = {
                 ["Content-Type"] = "application/json",
