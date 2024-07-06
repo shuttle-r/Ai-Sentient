@@ -16,19 +16,7 @@ local function MessRandomFunc()
   local randomDelayMess = math.random(2, 5)
   MessRandomDelay = randomDelayMess
 end
- function tableToString(tbl)
-    local str = ""
-    for k, v in pairs(tbl) do
-        if type(v) == "table" then
-            str = str .. "\n"
-            str = str .. tableToString(v)
-        else
-            str = str  .. tostring(v) .. "\n"
-        end
-    end
-    return str
-end
-
+ 
 --func:
 --add_friend_func
 local players = game:GetService("Players")
